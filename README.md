@@ -1,2 +1,25 @@
 # WeatherAppDemo_Kotlin
 Weather App Demo in Kotlin
+- https://openweathermap.org - SignUp(To register)/SignIn(To Login)
+- https://home.openweathermap.org/api_keys - To get API Key (Either use default/ generate your own key)
+- API Key is required to request for data
+- Create new Project in Android Studio.
+- Add necessary required permissions in AndroidManifest.xml file like INTERNET, ACCESS_NETWORK_STATE, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION.
+- Add version code and version name as well as change App Icon from AndroidManifest.xml file by setting icons of different sizes in mipmap.
+- Use default App theme or custom theme of your choice.
+- Create different sub packages like model, view,  db,  utils,  service,  api etc inside your main package to structure and manage your classes properly.
+- Creating one database instance for all application activities by using Singleton class named DBHelper.
+- Open/Create database.
+- Create table IF NOT EXISTS to the SQL so it will only create the table when table is not created
+- Create one model class Weather to get and set Weather Info. That we'll use in WeatherActivity class.
+- Created one Utility class named Utils.
+- Design UI to show current location information along with weather status and temperature, humidity, pressure and other weather attributes for display.
+- As soon as we were launching our app following steps to be followed:
+- Check for internet connection.  If internet connection is available proceed with API request call or else show error msg to use that "You have no internet connection...”.
+- Check if GPS is enabled or not. If not then ask for User permission to enable it.
+- Once GPS is enabled fetch device current location in terms of latitude and longitude.
+- If data available in dB fetch Weather Info from Local Database and UpdateUI immediately then request for API call to get updated result.
+- Use Retrofit for API Calls - Show busy/wait cursor dialog - Perform task in background.
+- Retrofit will save your development time, and also you can keep your code in developer friendly. Retrofit has given almost all the API's to make server call and to receive response. Internally they also use GSON to do the parsing. 
+- Use RXJava Observable Design Pattern to schedule a request for every 2 hours to update. There should not be more than 1 request in a 2-hour period.
+- After getting API response parse it and persists in local DB to avoid making further network requests within that 2 hrs interval.
